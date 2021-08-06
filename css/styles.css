@@ -1,0 +1,91 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: skyblue;
+}
+
+.text_box_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#haruki_section {
+  background: #f0efee;
+  height: 300px;
+  padding: 40px;
+}
+
+#haruki_section h2 {
+  margin: 0px 0px 50px 0px;
+  text-align: center;
+}
+
+#haruki_section .text_box {
+  border-bottom: 10px solid #6a7989;
+  border-top: 10px solid #6a7989;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0px;
+  position: relative;
+  -webkit-transition: height 0.15s ease-out;
+  transition: height 0.15s ease-out;
+  width: 200px;
+}
+
+#haruki_section .text_box:focus, #haruki_section .text_box:hover {
+  padding: 15px 0px;
+  -webkit-transition: padding 0.25s ease-in;
+  transition: padding 0.25s ease-in;
+}
+
+#haruki_section .text_box:focus label, #haruki_section .text_box:hover label {
+  position: absolute;
+  -webkit-transform: translate(0px, -60px);
+          transform: translate(0px, -60px);
+}
+
+#haruki_section .text_box:focus label + input, #haruki_section .text_box:hover label + input {
+  display: block;
+  height: 50px;
+  background: transparent;
+  border: none;
+}
+
+#haruki_section .text_box label {
+  font-size: 26px;
+  color: #6a7989;
+  -webkit-transition: all 1.23s;
+  transition: all 1.23s;
+}
+
+#haruki_section .text_box input {
+  color: #6a7989;
+  display: none;
+  font-size: 24px;
+  font-weight: bold;
+  height: 30px;
+}
+
+#haruki_section .text_box input:focus-visible {
+  outline: none;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,69 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	background: skyblue;
+}
+
+.text_box_container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#haruki_section {
+	background: #f0efee;
+	height: 300px;
+	padding: 40px;
+	h2 {
+		margin: 0px 0px 50px 0px;
+		text-align: center;
+	}
+
+	.text_box {
+		border-bottom: 10px solid #6a7989;
+		border-top: 10px solid #6a7989;
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0px;
+		position: relative;
+		transition: height 0.15s ease-out;
+		width: 200px;
+		&:focus,
+		&:hover {
+			padding: 15px 0px;
+			transition: padding 0.25s ease-in;
+			label {
+				position: absolute;
+				transform: translate(0px, -60px);
+				& + input {
+					display: block;
+					height: 50px;
+					background: transparent;
+					border: none;
+				}
+			}
+		}
+
+		label {
+			font-size: 26px;
+			color: #6a7989;
+			transition: all 1.23s;
+		}
+
+		input {
+			color: #6a7989;
+			display: none;
+			font-size: 24px;
+			font-weight: bold;
+			height: 30px;
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+}
