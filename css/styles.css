@@ -49,7 +49,7 @@ body {
 
 #haruki_section .input_group label {
   color: #6a7989;
-  font-size: 26px;
+  font-size: 20px;
   position: absolute;
   top: 30px;
   -webkit-transition: all 200ms ease-out;
@@ -60,12 +60,12 @@ body {
 #haruki_section .input_group input {
   /**/
   background: transparent;
-  border-bottom: 10px solid #6a7989;
+  border-bottom: 5px solid #6a7989;
   border-left: none;
   border-right: none;
-  border-top: 10px solid #6a7989;
+  border-top: 5px solid #6a7989;
   color: #6a7989;
-  font-size: 54px;
+  font-size: 25px;
   font-weight: bold;
   height: 70px;
   position: absolute;
@@ -86,10 +86,10 @@ body {
 
 #haruki_section .input_group input:focus {
   height: 80px;
-  padding-top: 20px;
 }
 
 #haruki_section .input_group input:focus ~ label {
+  /* or + */
   -webkit-transform: translate(0px, -60px);
           transform: translate(0px, -60px);
 }
@@ -132,10 +132,9 @@ body {
   transition: all 200ms ease-out;
   width: 100%;
   z-index: 0;
-}
-
-#hoshi_section .input_group label.dif {
-  visibility: hidden;
+  /* &.dif {
+			// 	visibility: hidden;
+			/} */
 }
 
 #hoshi_section .input_group label::after {
@@ -192,6 +191,12 @@ body {
 
 #hoshi_section .input_group input:focus {
   border-bottom: none;
+  /* & ~ .dif {
+				 	color: green;
+				 	visibility: visible;
+				 	animation: expand_width 15s;
+				 	background: orange;
+				 } */
 }
 
 #hoshi_section .input_group input:focus ~ label {
@@ -218,13 +223,6 @@ body {
           animation: expand_width 1s;
   visibility: visible;
   width: 100%;
-}
-
-#hoshi_section .input_group input:focus ~ .dif {
-  color: green;
-  visibility: visible;
-  -webkit-animation: expand_width 15s;
-          animation: expand_width 15s;
 }
 
 #hoshi_section .input_group input:focus-visible {
