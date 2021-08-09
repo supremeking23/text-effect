@@ -25,42 +25,51 @@ body {
 	}
 
 	.text_box {
-		border-bottom: 10px solid #6a7989;
-		border-top: 10px solid #6a7989;
 		display: flex;
 		flex-direction: column;
 		padding: 10px 0px;
 		position: relative;
-		transition: height 0.15s ease-out;
-		width: 200px;
-		&:focus,
-		&:hover {
-			padding: 15px 0px;
-			transition: padding 0.25s ease-in;
-			label {
-				position: absolute;
-				transform: translate(0px, -60px);
-				& + input {
-					display: block;
-					height: 50px;
-					background: transparent;
-					border: none;
-				}
-			}
-		}
+
+		width: 450px;
 
 		label {
-			font-size: 26px;
 			color: #6a7989;
+			font-size: 26px;
 			transition: all 1.23s;
+			z-index: 0;
+			position: absolute;
+			top: 30px;
 		}
 
 		input {
+			background: transparent;
+			border-bottom: 10px solid #6a7989;
+			border-left: none;
+			border-right: none;
+			border-top: 10px solid #6a7989;
 			color: #6a7989;
-			display: none;
-			font-size: 24px;
+			font-size: 54px;
 			font-weight: bold;
-			height: 30px;
+			height: 70px;
+			position: absolute;
+			width: 100%;
+			z-index: 1;
+			transition: height 0.15s ease-out;
+			&:not(:placeholder-shown) {
+				height: 80px;
+				& ~ label {
+					transform: translate(0px, -60px);
+				}
+			}
+
+			&:focus {
+				height: 80px;
+				padding-top: 20px;
+				& ~ label {
+					// or +
+					transform: translate(0px, -60px);
+				}
+			}
 			&:focus-visible {
 				outline: none;
 			}
