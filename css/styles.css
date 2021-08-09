@@ -50,13 +50,11 @@ body {
 #haruki_section .text_box label {
   color: #6a7989;
   font-size: 26px;
-  -webkit-transition: all 1.23s;
-  transition: all 1.23s;
-  z-index: 0;
   position: absolute;
   top: 30px;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
+  z-index: 0;
 }
 
 #haruki_section .text_box input {
@@ -97,5 +95,140 @@ body {
 
 #haruki_section .text_box input:focus-visible {
   outline: none;
+}
+
+#hoshi_section {
+  background: #f9f7f6;
+  height: 300px;
+  padding: 40px;
+}
+
+#hoshi_section h2 {
+  margin: 0px 0px 50px 0px;
+  text-align: center;
+}
+
+#hoshi_section .text_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0px;
+  position: relative;
+  width: 450px;
+}
+
+#hoshi_section .text_box label {
+  color: #6a7989;
+  font-size: 20.25px;
+  font-weight: bold;
+  position: absolute;
+  top: 30px;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  width: 100%;
+  z-index: 0;
+}
+
+#hoshi_section .text_box label::after {
+  content: "";
+  position: absolute;
+  bottom: -90px;
+  left: 0;
+  height: 6px;
+  width: 10px;
+  visibility: hidden;
+  background-color: red;
+  -webkit-transition: width 0.2s ease all;
+  transition: width 0.2s ease all;
+}
+
+#hoshi_section .text_box input {
+  background: transparent;
+  border-bottom: 1px solid #6a7989;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: #6a7989;
+  font-size: 25px;
+  font-weight: bold;
+  height: 70px;
+  position: absolute;
+  width: 100%;
+}
+
+#hoshi_section .text_box input:not(:placeholder-shown) ~ label {
+  -webkit-transform: translate(0px, -60px);
+          transform: translate(0px, -60px);
+}
+
+#hoshi_section .text_box input:not(:placeholder-shown) ~ label::after {
+  width: 100%;
+  background-color: blue;
+  visibility: visible;
+}
+
+#hoshi_section .text_box input:focus ~ label {
+  -webkit-animation: fadeIn 10s;
+  animation: fadeIn 10s;
+  -webkit-transform: translate(0px, -60px);
+          transform: translate(0px, -60px);
+}
+
+#hoshi_section .text_box input:focus ~ label::after {
+  background-color: blue;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  width: 100%;
+  visibility: visible;
+}
+
+#hoshi_section .text_box input:focus-visible {
+  outline: none;
+}
+
+@-webkit-keyframes example {
+  from {
+    width: 10px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes example {
+  from {
+    width: 10px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+  }
+  100% {
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
