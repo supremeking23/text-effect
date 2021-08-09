@@ -34,7 +34,7 @@ body {
 
 		label {
 			color: #6a7989;
-			font-size: 26px;
+			font-size: 20px;
 			position: absolute;
 			top: 30px;
 			transition: all 200ms ease-out;
@@ -44,12 +44,12 @@ body {
 		input {
 			/**/
 			background: transparent;
-			border-bottom: 10px solid #6a7989;
+			border-bottom: 5px solid #6a7989;
 			border-left: none;
 			border-right: none;
-			border-top: 10px solid #6a7989;
+			border-top: 5px solid #6a7989;
 			color: #6a7989;
-			font-size: 54px;
+			font-size: 25px;
 			font-weight: bold;
 			height: 70px;
 			position: absolute;
@@ -59,6 +59,7 @@ body {
 
 			&:not(:placeholder-shown) {
 				height: 80px;
+
 				& ~ label {
 					transform: translate(0px, -60px);
 				}
@@ -66,12 +67,13 @@ body {
 
 			&:focus {
 				height: 80px;
-				padding-top: 20px;
+
 				& ~ label {
-					// or +
+					/* or + */
 					transform: translate(0px, -60px);
 				}
 			}
+
 			&:focus-visible {
 				outline: none;
 			}
@@ -106,9 +108,9 @@ body {
 			width: 100%;
 			z-index: 0;
 
-			&.dif {
-				visibility: hidden;
-			}
+			/* &.dif {
+			// 	visibility: hidden;
+			/} */
 
 			&::after {
 				bottom: -90px;
@@ -191,12 +193,12 @@ body {
 					}
 				}
 
-				& ~ .dif {
-					color: green;
-					visibility: visible;
-					animation: expand_width 15s;
-					// background: orange;
-				}
+				/* & ~ .dif {
+				 	color: green;
+				 	visibility: visible;
+				 	animation: expand_width 15s;
+				 	background: orange;
+				 } */
 			}
 
 			&:focus-visible {
