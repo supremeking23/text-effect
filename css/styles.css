@@ -137,9 +137,6 @@ section {
   transition: all 200ms ease-out;
   width: 100%;
   z-index: 0;
-  /* &.dif {
-			// 	visibility: hidden;
-			/} */
 }
 
 #hoshi_section .input_group label::after {
@@ -196,12 +193,6 @@ section {
 
 #hoshi_section .input_group input:focus {
   border-bottom: none;
-  /* & ~ .dif {
-				 	color: green;
-				 	visibility: visible;
-				 	animation: expand_width 15s;
-				 	background: orange;
-				 } */
 }
 
 #hoshi_section .input_group input:focus ~ label {
@@ -252,12 +243,12 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 10px 0px;
-  position: relative;
-  width: 450px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 10px 0px;
+  position: relative;
+  width: 450px;
 }
 
 #kuro_section .input_group label {
@@ -265,11 +256,14 @@ section {
   font-size: 20.25px;
   font-weight: bold;
   position: absolute;
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 
 #kuro_section .input_group .spans {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,15 +271,12 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  visibility: hidden;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
+  visibility: hidden;
 }
 
 #kuro_section .input_group .spans span {
@@ -359,8 +350,12 @@ section {
     opacity: 1;
   }
   50% {
+    /* -webkit-transform: translateX(-20px); */
+    /* transform: translate(0px, 0px); */
   }
   100% {
+    /* -webkit-transform: translateX(0); */
+    /* transform: translate(80px, 0px); */
   }
 }
 
@@ -368,8 +363,16 @@ section {
   0% {
     opacity: 0;
   }
-  100% {
+  20% {
     opacity: 1;
+  }
+  50% {
+    /* -webkit-transform: translateX(-20px); */
+    /* transform: translate(0px, 0px); */
+  }
+  100% {
+    /* -webkit-transform: translateX(0); */
+    /* transform: translate(80px, 0px); */
   }
 }
 /*# sourceMappingURL=styles.css.map */
