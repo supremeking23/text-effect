@@ -39,6 +39,7 @@ body {
 			z-index: 0;
 			position: absolute;
 			top: 30px;
+			transition: all 200ms ease-out;
 		}
 
 		input {
@@ -54,7 +55,7 @@ body {
 			position: absolute;
 			width: 100%;
 			z-index: 1;
-			transition: height 0.15s ease-out;
+			transition: all 200ms ease-out;
 			&:not(:placeholder-shown) {
 				height: 80px;
 				& ~ label {

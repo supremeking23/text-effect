@@ -55,6 +55,8 @@ body {
   z-index: 0;
   position: absolute;
   top: 30px;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
 }
 
 #haruki_section .text_box input {
@@ -70,8 +72,8 @@ body {
   position: absolute;
   width: 100%;
   z-index: 1;
-  -webkit-transition: height 0.15s ease-out;
-  transition: height 0.15s ease-out;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
 }
 
 #haruki_section .text_box input:not(:placeholder-shown) {
