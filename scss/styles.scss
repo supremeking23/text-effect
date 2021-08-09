@@ -5,11 +5,11 @@
 }
 
 body {
-	font-family: "Montserrat", sans-serif;
 	background: skyblue;
+	font-family: "Montserrat", sans-serif;
 }
 
-.text_box_container {
+.input_group_container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -19,17 +19,19 @@ body {
 	background: #f0efee;
 	height: 300px;
 	padding: 40px;
+
 	h2 {
 		margin: 0px 0px 50px 0px;
 		text-align: center;
 	}
 
-	.text_box {
+	.input_group {
 		display: flex;
 		flex-direction: column;
 		padding: 10px 0px;
 		position: relative;
 		width: 450px;
+
 		label {
 			color: #6a7989;
 			font-size: 26px;
@@ -40,6 +42,7 @@ body {
 		}
 
 		input {
+			/**/
 			background: transparent;
 			border-bottom: 10px solid #6a7989;
 			border-left: none;
@@ -50,9 +53,10 @@ body {
 			font-weight: bold;
 			height: 70px;
 			position: absolute;
+			transition: all 200ms ease-out;
 			width: 100%;
 			z-index: 1;
-			transition: all 200ms ease-out;
+
 			&:not(:placeholder-shown) {
 				height: 80px;
 				& ~ label {
@@ -79,17 +83,19 @@ body {
 	background: #f9f7f6;
 	height: 300px;
 	padding: 40px;
+
 	h2 {
 		margin: 0px 0px 50px 0px;
 		text-align: center;
 	}
 
-	.text_box {
+	.input_group {
 		display: flex;
 		flex-direction: column;
 		padding: 10px 0px;
 		position: relative;
 		width: 450px;
+
 		label {
 			color: #6a7989;
 			font-size: 20.25px;
@@ -100,16 +106,19 @@ body {
 			width: 100%;
 			z-index: 0;
 
-			&::after {
-				content: "";
-				position: absolute;
-				bottom: -90px;
-				left: 0;
-				height: 6px;
-				width: 10px;
+			&.dif {
 				visibility: hidden;
-				background-color: red;
+			}
+
+			&::after {
+				bottom: -90px;
+				content: "";
+				height: 6px;
+				left: 0;
+				position: absolute;
 				transition: width 0.2s ease all;
+				visibility: hidden;
+				width: 10px;
 			}
 		}
 
@@ -127,32 +136,66 @@ body {
 			width: 100%;
 
 			&:not(:placeholder-shown) {
+				/**/
 				& ~ label {
 					transform: translate(0px, -60px);
+
+					&#name_label::after {
+						background-color: #00aaff;
+					}
+
+					&#street_label::after {
+						background-color: #00ffaa;
+					}
+
+					&#town_label::after {
+						background-color: #ff5500;
+					}
+
 					&::after {
-						width: 100%;
-						background-color: blue;
 						visibility: visible;
+						width: 100%;
 					}
 				}
 			}
 
 			&:focus {
+				border-bottom: none;
+
 				& ~ label {
 					// or +
 					-moz-animation: fadeIn 10s;
 					-ms-animation: fadeIn 10s;
 					-o-animation: fadeIn 10s;
 					-webkit-animation: fadeIn 10s;
-					animation: fadeIn 10s;
+					animation: fadeIn 10s linear;
 					transform: translate(0px, -60px);
-					&::after {
-						background-color: blue;
-						animation-name: example;
-						animation-duration: 4s;
-						width: 100%;
-						visibility: visible;
+					// visibility: hidden;
+
+					&#name_label::after {
+						background-color: #00aaff;
 					}
+
+					&#street_label::after {
+						background-color: #00ffaa;
+					}
+
+					&#town_label::after {
+						background-color: #ff5500;
+					}
+
+					&::after {
+						animation: expand_width 1s;
+						visibility: visible;
+						width: 100%;
+					}
+				}
+
+				& ~ .dif {
+					color: green;
+					visibility: visible;
+					animation: expand_width 15s;
+					// background: orange;
 				}
 			}
 
@@ -165,7 +208,7 @@ body {
 
 //https://blog.hubspot.com/website/css-fade-in
 
-@keyframes example {
+@keyframes expand_width {
 	from {
 		width: 10px;
 	}
