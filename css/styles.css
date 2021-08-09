@@ -6,11 +6,11 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
   background: skyblue;
+  font-family: "Montserrat", sans-serif;
 }
 
-.text_box_container {
+.input_group_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,7 +34,7 @@ body {
   text-align: center;
 }
 
-#haruki_section .text_box {
+#haruki_section .input_group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,19 +47,18 @@ body {
   width: 450px;
 }
 
-#haruki_section .text_box label {
+#haruki_section .input_group label {
   color: #6a7989;
   font-size: 26px;
-  -webkit-transition: all 1.23s;
-  transition: all 1.23s;
-  z-index: 0;
   position: absolute;
   top: 30px;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
+  z-index: 0;
 }
 
-#haruki_section .text_box input {
+#haruki_section .input_group input {
+  /**/
   background: transparent;
   border-bottom: 10px solid #6a7989;
   border-left: none;
@@ -70,32 +69,205 @@ body {
   font-weight: bold;
   height: 70px;
   position: absolute;
-  width: 100%;
-  z-index: 1;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
+  width: 100%;
+  z-index: 1;
 }
 
-#haruki_section .text_box input:not(:placeholder-shown) {
+#haruki_section .input_group input:not(:placeholder-shown) {
   height: 80px;
 }
 
-#haruki_section .text_box input:not(:placeholder-shown) ~ label {
+#haruki_section .input_group input:not(:placeholder-shown) ~ label {
   -webkit-transform: translate(0px, -60px);
           transform: translate(0px, -60px);
 }
 
-#haruki_section .text_box input:focus {
+#haruki_section .input_group input:focus {
   height: 80px;
   padding-top: 20px;
 }
 
-#haruki_section .text_box input:focus ~ label {
+#haruki_section .input_group input:focus ~ label {
   -webkit-transform: translate(0px, -60px);
           transform: translate(0px, -60px);
 }
 
-#haruki_section .text_box input:focus-visible {
+#haruki_section .input_group input:focus-visible {
   outline: none;
+}
+
+#hoshi_section {
+  background: #f9f7f6;
+  height: 300px;
+  padding: 40px;
+}
+
+#hoshi_section h2 {
+  margin: 0px 0px 50px 0px;
+  text-align: center;
+}
+
+#hoshi_section .input_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0px;
+  position: relative;
+  width: 450px;
+}
+
+#hoshi_section .input_group label {
+  color: #6a7989;
+  font-size: 20.25px;
+  font-weight: bold;
+  position: absolute;
+  top: 30px;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  width: 100%;
+  z-index: 0;
+}
+
+#hoshi_section .input_group label.dif {
+  visibility: hidden;
+}
+
+#hoshi_section .input_group label::after {
+  bottom: -90px;
+  content: "";
+  height: 6px;
+  left: 0;
+  position: absolute;
+  -webkit-transition: width 0.2s ease all;
+  transition: width 0.2s ease all;
+  visibility: hidden;
+  width: 10px;
+}
+
+#hoshi_section .input_group input {
+  background: transparent;
+  border-bottom: 1px solid #6a7989;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: #6a7989;
+  font-size: 25px;
+  font-weight: bold;
+  height: 70px;
+  position: absolute;
+  width: 100%;
+}
+
+#hoshi_section .input_group input:not(:placeholder-shown) {
+  /**/
+}
+
+#hoshi_section .input_group input:not(:placeholder-shown) ~ label {
+  -webkit-transform: translate(0px, -60px);
+          transform: translate(0px, -60px);
+}
+
+#hoshi_section .input_group input:not(:placeholder-shown) ~ label#name_label::after {
+  background-color: #00aaff;
+}
+
+#hoshi_section .input_group input:not(:placeholder-shown) ~ label#street_label::after {
+  background-color: #00ffaa;
+}
+
+#hoshi_section .input_group input:not(:placeholder-shown) ~ label#town_label::after {
+  background-color: #ff5500;
+}
+
+#hoshi_section .input_group input:not(:placeholder-shown) ~ label::after {
+  visibility: visible;
+  width: 100%;
+}
+
+#hoshi_section .input_group input:focus {
+  border-bottom: none;
+}
+
+#hoshi_section .input_group input:focus ~ label {
+  -webkit-animation: fadeIn 10s;
+  animation: fadeIn 10s linear;
+  -webkit-transform: translate(0px, -60px);
+          transform: translate(0px, -60px);
+}
+
+#hoshi_section .input_group input:focus ~ label#name_label::after {
+  background-color: #00aaff;
+}
+
+#hoshi_section .input_group input:focus ~ label#street_label::after {
+  background-color: #00ffaa;
+}
+
+#hoshi_section .input_group input:focus ~ label#town_label::after {
+  background-color: #ff5500;
+}
+
+#hoshi_section .input_group input:focus ~ label::after {
+  -webkit-animation: expand_width 1s;
+          animation: expand_width 1s;
+  visibility: visible;
+  width: 100%;
+}
+
+#hoshi_section .input_group input:focus ~ .dif {
+  color: green;
+  visibility: visible;
+  -webkit-animation: expand_width 15s;
+          animation: expand_width 15s;
+}
+
+#hoshi_section .input_group input:focus-visible {
+  outline: none;
+}
+
+@-webkit-keyframes expand_width {
+  from {
+    width: 10px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes expand_width {
+  from {
+    width: 10px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+  }
+  100% {
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

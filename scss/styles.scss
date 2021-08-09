@@ -5,11 +5,11 @@
 }
 
 body {
-	font-family: "Montserrat", sans-serif;
 	background: skyblue;
+	font-family: "Montserrat", sans-serif;
 }
 
-.text_box_container {
+.input_group_container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -19,30 +19,30 @@ body {
 	background: #f0efee;
 	height: 300px;
 	padding: 40px;
+
 	h2 {
 		margin: 0px 0px 50px 0px;
 		text-align: center;
 	}
 
-	.text_box {
+	.input_group {
 		display: flex;
 		flex-direction: column;
 		padding: 10px 0px;
 		position: relative;
-
 		width: 450px;
 
 		label {
 			color: #6a7989;
 			font-size: 26px;
-			transition: all 1.23s;
-			z-index: 0;
 			position: absolute;
 			top: 30px;
 			transition: all 200ms ease-out;
+			z-index: 0;
 		}
 
 		input {
+			/**/
 			background: transparent;
 			border-bottom: 10px solid #6a7989;
 			border-left: none;
@@ -53,9 +53,10 @@ body {
 			font-weight: bold;
 			height: 70px;
 			position: absolute;
+			transition: all 200ms ease-out;
 			width: 100%;
 			z-index: 1;
-			transition: all 200ms ease-out;
+
 			&:not(:placeholder-shown) {
 				height: 80px;
 				& ~ label {
@@ -75,5 +76,197 @@ body {
 				outline: none;
 			}
 		}
+	}
+}
+
+#hoshi_section {
+	background: #f9f7f6;
+	height: 300px;
+	padding: 40px;
+
+	h2 {
+		margin: 0px 0px 50px 0px;
+		text-align: center;
+	}
+
+	.input_group {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0px;
+		position: relative;
+		width: 450px;
+
+		label {
+			color: #6a7989;
+			font-size: 20.25px;
+			font-weight: bold;
+			position: absolute;
+			top: 30px;
+			transition: all 200ms ease-out;
+			width: 100%;
+			z-index: 0;
+
+			&.dif {
+				visibility: hidden;
+			}
+
+			&::after {
+				bottom: -90px;
+				content: "";
+				height: 6px;
+				left: 0;
+				position: absolute;
+				transition: width 0.2s ease all;
+				visibility: hidden;
+				width: 10px;
+			}
+		}
+
+		input {
+			background: transparent;
+			border-bottom: 1px solid #6a7989;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			color: #6a7989;
+			font-size: 25px;
+			font-weight: bold;
+			height: 70px;
+			position: absolute;
+			width: 100%;
+
+			&:not(:placeholder-shown) {
+				/**/
+				& ~ label {
+					transform: translate(0px, -60px);
+
+					&#name_label::after {
+						background-color: #00aaff;
+					}
+
+					&#street_label::after {
+						background-color: #00ffaa;
+					}
+
+					&#town_label::after {
+						background-color: #ff5500;
+					}
+
+					&::after {
+						visibility: visible;
+						width: 100%;
+					}
+				}
+			}
+
+			&:focus {
+				border-bottom: none;
+
+				& ~ label {
+					// or +
+					-moz-animation: fadeIn 10s;
+					-ms-animation: fadeIn 10s;
+					-o-animation: fadeIn 10s;
+					-webkit-animation: fadeIn 10s;
+					animation: fadeIn 10s linear;
+					transform: translate(0px, -60px);
+					// visibility: hidden;
+
+					&#name_label::after {
+						background-color: #00aaff;
+					}
+
+					&#street_label::after {
+						background-color: #00ffaa;
+					}
+
+					&#town_label::after {
+						background-color: #ff5500;
+					}
+
+					&::after {
+						animation: expand_width 1s;
+						visibility: visible;
+						width: 100%;
+					}
+				}
+
+				& ~ .dif {
+					color: green;
+					visibility: visible;
+					animation: expand_width 15s;
+					// background: orange;
+				}
+			}
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+}
+
+//https://blog.hubspot.com/website/css-fade-in
+
+@keyframes expand_width {
+	from {
+		width: 10px;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+
+	50% {
+		// -webkit-transform: translateX(-20px);
+		// transform: translate(0px, 0px);
+	}
+	100% {
+		// -webkit-transform: translateX(0);
+		// transform: translate(80px, 0px);
+	}
+}
+
+@-moz-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
