@@ -307,17 +307,6 @@ section {
 			transition: all 200ms ease-out;
 			width: 100%;
 			z-index: 0;
-
-			&::after {
-				bottom: -90px;
-				content: "";
-				height: 6px;
-				left: 0;
-				position: absolute;
-				transition: width 0.2s ease all;
-				visibility: hidden;
-				width: 10px;
-			}
 		}
 
 		input {
@@ -368,7 +357,89 @@ section {
 	}
 }
 
+#minoru_section {
+	background: #f9ebea;
+
+	h2 {
+		margin: 0px 0px 50px 0px;
+		text-align: center;
+	}
+
+	.input_group {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0px;
+		position: relative;
+		width: 450px;
+
+		label {
+			color: #6a7989;
+			font-size: 20.25px;
+			font-weight: bold;
+			position: absolute;
+			top: 100px;
+			width: 100%;
+			z-index: 0;
+		}
+
+		input {
+			background: #ffffff;
+			border-bottom: none;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			color: #eca29b;
+			font-size: 25px;
+			font-weight: bold;
+			height: 70px;
+			position: absolute;
+			width: 100%;
+			transition: all 200ms ease;
+
+			&:not(:placeholder-shown) {
+				/**/
+				border: 2px solid #eca29b;
+				padding: 20px;
+			}
+
+			&:focus {
+				border: 2px solid #eca29b;
+				padding: 20px;
+				animation: box_shadow_animation 70ms;
+			}
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+}
+
 //https://blog.hubspot.com/website/css-fade-in
+
+@keyframes box_shadow_animation {
+	0% {
+		box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+		-webkit-box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+		-moz-box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+	}
+	20% {
+		box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+		-webkit-box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+		-moz-box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+	}
+
+	50% {
+		box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+		-webkit-box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+		-moz-box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+	}
+	100% {
+		box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+		-webkit-box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+		-moz-box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+	}
+}
 
 @keyframes expand_width {
 	from {
