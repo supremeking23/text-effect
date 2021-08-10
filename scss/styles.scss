@@ -415,6 +415,63 @@ section {
 	}
 }
 
+#yoko_section {
+	background: #df6659;
+
+	h2 {
+		margin: 0px 0px 50px 0px;
+		text-align: center;
+	}
+
+	.input_group {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0px;
+		position: relative;
+		width: 450px;
+
+		label {
+			color: #b04b40;
+			font-size: 20.25px;
+			font-weight: bold;
+			position: absolute;
+			top: 100px;
+			width: 100%;
+			z-index: 0;
+		}
+
+		input {
+			background: transparent;
+			border-bottom: 3px solid #b04b40;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			color: #fff;
+			font-size: 25px;
+			font-weight: bold;
+			height: 70px;
+			position: absolute;
+			width: 100%;
+			transition: all 200ms ease;
+
+			&:not(:placeholder-shown) {
+				/**/
+				background: #c5564a;
+				padding: 20px;
+			}
+
+			&:focus {
+				background: #c5564a;
+				padding: 20px;
+			}
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+}
+
 //https://blog.hubspot.com/website/css-fade-in
 
 @keyframes box_shadow_animation {
