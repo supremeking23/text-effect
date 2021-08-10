@@ -466,10 +466,58 @@ section {
 #minoru_section .input_group input:focus {
   border: 2px solid #eca29b;
   padding: 20px;
+  -webkit-animation: box_shadow_animation 70ms;
+          animation: box_shadow_animation 70ms;
 }
 
 #minoru_section .input_group input:focus-visible {
   outline: none;
+}
+
+@-webkit-keyframes box_shadow_animation {
+  0% {
+    box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+    -webkit-box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+    -moz-box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+  }
+  20% {
+    box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+    -webkit-box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+    -moz-box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+  }
+  50% {
+    box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+    -webkit-box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+    -moz-box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+  }
+  100% {
+    box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+    -webkit-box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+    -moz-box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+  }
+}
+
+@keyframes box_shadow_animation {
+  0% {
+    box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+    -webkit-box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+    -moz-box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
+  }
+  20% {
+    box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+    -webkit-box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+    -moz-box-shadow: 1px 3px 25px 8px rgba(236, 162, 155, 0.75);
+  }
+  50% {
+    box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+    -webkit-box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+    -moz-box-shadow: 1px 3px 29px 4px rgba(236, 162, 155, 0.75);
+  }
+  100% {
+    box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+    -webkit-box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+    -moz-box-shadow: 1px 3px 28px 19px rgba(236, 162, 155, 0.75);
+  }
 }
 
 @-webkit-keyframes expand_width {
