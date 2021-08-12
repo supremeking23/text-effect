@@ -472,6 +472,63 @@ section {
 	}
 }
 
+#akira_section {
+	background: #2f3238;
+
+	h2 {
+		color: #43464c;
+		margin: 0px 0px 50px 0px;
+		text-align: center;
+		
+	}
+
+	.input_group {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0px;
+		position: relative;
+		width: 450px;
+
+		label {
+			color: #CC6055;
+			font-size: 20.25px;
+			font-weight: bold;
+			position: absolute;
+			text-align: center;
+			top: 30px;
+			width: 100%;
+			z-index: 0;
+			transition: transform 200ms ease;
+		}
+
+		input {
+			background: transparent;
+			border: 5px solid #696A6E;
+			color: #AAAAAA;
+			font-size: 25px;
+			font-weight: bold;
+			height: 70px;
+			position: absolute;
+			width: 100%;
+			transition: border 200ms ease;
+
+			&:focus,&:not(:placeholder-shown) {
+				border: 3px solid #696A6E;
+				text-align: center;
+				& ~ label {
+					// or +
+					
+					transform: translate(0px, -60px);
+				}
+			}
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+}
+
 //https://blog.hubspot.com/website/css-fade-in
 
 @keyframes box_shadow_animation {
