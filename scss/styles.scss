@@ -43,41 +43,62 @@ section {
 			color: #6a7989;
 			font-size: 20px;
 			position: absolute;
-			top: 30px;
-			transition: all 200ms ease-out;
+			top: 40px;
+			transition: transform 200ms ease-out;
 			z-index: 0;
+			width: 100%;
+			&::after {
+				background: #6a7989;;
+				content: '';
+				height: 4px;
+				left: 0px;
+				position: absolute;
+				top: -30px;
+				transition: transform 500ms ease-out;
+				width: 100%;
+			}
+
+			&::before {
+				content: '';
+				height: 4px;
+				width: 100%;
+				background: #6a7989;;
+				position: absolute;
+				left: 0px;
+				top: 35px;
+				transition: transform 500ms ease-out;
+			}
 		}
 
 		input {
 			/**/
-			background: transparent;
-			border-bottom: 5px solid #6a7989;
-			border-left: none;
-			border-right: none;
-			border-top: 5px solid #6a7989;
+			background: transparent;			
+			border: none;
 			color: #6a7989;
 			font-size: 25px;
 			font-weight: bold;
 			height: 70px;
+			padding: 14px 0px 0px 0px;
 			position: absolute;
 			transition: all 200ms ease-out;
 			width: 100%;
 			z-index: 1;
 
-			&:not(:placeholder-shown) {
+			&:focus,&:not(:placeholder-shown) {
 				height: 80px;
 
 				& ~ label {
+				
 					transform: translate(0px, -60px);
-				}
-			}
+					&::after {
+						transform: translate(0px, 70px);
+						
+					}
 
-			&:focus {
-				height: 80px;
+					&::before {
+						transform: translate(0px, 80px);	
+					}
 
-				& ~ label {
-					/* or + */
-					transform: translate(0px, -60px);
 				}
 			}
 

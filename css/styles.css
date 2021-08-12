@@ -58,23 +58,52 @@ section {
   color: #6a7989;
   font-size: 20px;
   position: absolute;
-  top: 30px;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
+  top: 40px;
+  -webkit-transition: -webkit-transform 200ms ease-out;
+  transition: -webkit-transform 200ms ease-out;
+  transition: transform 200ms ease-out;
+  transition: transform 200ms ease-out, -webkit-transform 200ms ease-out;
   z-index: 0;
+  width: 100%;
+}
+
+#haruki_section .input_group label::after {
+  background: #6a7989;
+  content: '';
+  height: 4px;
+  left: 0px;
+  position: absolute;
+  top: -30px;
+  -webkit-transition: -webkit-transform 500ms ease-out;
+  transition: -webkit-transform 500ms ease-out;
+  transition: transform 500ms ease-out;
+  transition: transform 500ms ease-out, -webkit-transform 500ms ease-out;
+  width: 100%;
+}
+
+#haruki_section .input_group label::before {
+  content: '';
+  height: 4px;
+  width: 100%;
+  background: #6a7989;
+  position: absolute;
+  left: 0px;
+  top: 35px;
+  -webkit-transition: -webkit-transform 500ms ease-out;
+  transition: -webkit-transform 500ms ease-out;
+  transition: transform 500ms ease-out;
+  transition: transform 500ms ease-out, -webkit-transform 500ms ease-out;
 }
 
 #haruki_section .input_group input {
   /**/
   background: transparent;
-  border-bottom: 5px solid #6a7989;
-  border-left: none;
-  border-right: none;
-  border-top: 5px solid #6a7989;
+  border: none;
   color: #6a7989;
   font-size: 25px;
   font-weight: bold;
   height: 70px;
+  padding: 14px 0px 0px 0px;
   position: absolute;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
@@ -82,23 +111,23 @@ section {
   z-index: 1;
 }
 
-#haruki_section .input_group input:not(:placeholder-shown) {
+#haruki_section .input_group input:focus, #haruki_section .input_group input:not(:placeholder-shown) {
   height: 80px;
 }
 
-#haruki_section .input_group input:not(:placeholder-shown) ~ label {
+#haruki_section .input_group input:focus ~ label, #haruki_section .input_group input:not(:placeholder-shown) ~ label {
   -webkit-transform: translate(0px, -60px);
           transform: translate(0px, -60px);
 }
 
-#haruki_section .input_group input:focus {
-  height: 80px;
+#haruki_section .input_group input:focus ~ label::after, #haruki_section .input_group input:not(:placeholder-shown) ~ label::after {
+  -webkit-transform: translate(0px, 70px);
+          transform: translate(0px, 70px);
 }
 
-#haruki_section .input_group input:focus ~ label {
-  /* or + */
-  -webkit-transform: translate(0px, -60px);
-          transform: translate(0px, -60px);
+#haruki_section .input_group input:focus ~ label::before, #haruki_section .input_group input:not(:placeholder-shown) ~ label::before {
+  -webkit-transform: translate(0px, 80px);
+          transform: translate(0px, 80px);
 }
 
 #haruki_section .input_group input:focus-visible {
