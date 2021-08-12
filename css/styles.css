@@ -537,6 +537,71 @@ section {
   outline: none;
 }
 
+#akira_section {
+  background: #2f3238;
+}
+
+#akira_section h2 {
+  color: #43464c;
+  margin: 0px 0px 50px 0px;
+  text-align: center;
+}
+
+#akira_section .input_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0px;
+  position: relative;
+  width: 450px;
+}
+
+#akira_section .input_group label {
+  color: #CC6055;
+  font-size: 20.25px;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  width: 100%;
+  z-index: 0;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+#akira_section .input_group input {
+  background: transparent;
+  border: 5px solid #696A6E;
+  color: #AAAAAA;
+  font-size: 25px;
+  font-weight: bold;
+  height: 70px;
+  position: absolute;
+  width: 100%;
+  -webkit-transition: border 200ms ease;
+  transition: border 200ms ease;
+}
+
+#akira_section .input_group input:focus, #akira_section .input_group input:not(:placeholder-shown) {
+  border: 3px solid #696A6E;
+  text-align: center;
+}
+
+#akira_section .input_group input:focus ~ label, #akira_section .input_group input:not(:placeholder-shown) ~ label {
+  -webkit-transform: translate(0px, -60px);
+          transform: translate(0px, -60px);
+}
+
+#akira_section .input_group input:focus-visible {
+  outline: none;
+}
+
 @-webkit-keyframes box_shadow_animation {
   0% {
     box-shadow: 1px 3px 0px 8px rgba(236, 162, 155, 0.75);
