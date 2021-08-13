@@ -41,20 +41,45 @@ section {
 
 		label {
 			color: #6a7989;
-			font-size: 20px;
+			font-size: 25px;
+			font-weight: bold;
 			position: absolute;
-			top: 30px;
-			transition: all 200ms ease-out;
+			top: 40px;
+			width: 100%;
 			z-index: 0;
+
+			span {
+				position: absolute;
+				top: -10px;
+				transition: transform 200ms ease-out;
+			}
+
+			&::after {
+				background: #6a7989;
+				content: '';
+				height: 4px;
+				left: 0px;
+				position: absolute;
+				top: -30px;
+				transition: transform 300ms ease-out;
+				width: 100%;
+			}
+
+			&::before {
+				background: #6a7989;;
+				content: '';
+				height: 4px;
+				left: 0px;
+				position: absolute;
+				top: 35px;
+				transition: transform 300ms ease-out;
+				width: 100%;
+			}
 		}
 
 		input {
-			/**/
-			background: transparent;
-			border-bottom: 5px solid #6a7989;
-			border-left: none;
-			border-right: none;
-			border-top: 5px solid #6a7989;
+			background: transparent;			
+			border: none;
 			color: #6a7989;
 			font-size: 25px;
 			font-weight: bold;
@@ -64,20 +89,24 @@ section {
 			width: 100%;
 			z-index: 1;
 
-			&:not(:placeholder-shown) {
-				height: 80px;
-
+			&:focus,&:not(:placeholder-shown) {
+			
 				& ~ label {
-					transform: translate(0px, -60px);
-				}
-			}
+					
+					& > span {
+						transform: translate(0px, -80px);
+						top: 0px;
+					}
+					
+					&::after {
+						transform: translate(0px, -10px);
+						
+					}
 
-			&:focus {
-				height: 80px;
+					&::before {
+						transform: translate(0px, 10px);	
+					}
 
-				& ~ label {
-					/* or + */
-					transform: translate(0px, -60px);
 				}
 			}
 
