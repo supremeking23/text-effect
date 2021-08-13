@@ -9,6 +9,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 }
 
+/* resets */
 h2 {
 	font-size: 40px;
 }
@@ -138,28 +139,28 @@ section {
 			font-weight: bold;
 			position: absolute;
 			top: 30px;
-			transition: all 200ms ease-out;
+			transition: border-color 15s ease-out;
 			width: 100%;
 			z-index: 0;
 
-			&::after {
-				bottom: -90px;
-				content: "";
-				height: 6px;
-				left: 0;
+			span{
 				position: absolute;
-				transition: width 0.2s ease all;
-				visibility: hidden;
-				width: 10px;
+				transition: all 200ms ease-out;
+			}
+
+			&::before{
+				background: #6a7989;
+				content: '';
+				height: 2px;
+				position: absolute;
+				top: 50px;
+				width: 100%;
 			}
 		}
 
 		input {
 			background: transparent;
-			border-bottom: 1px solid #6a7989;
-			border-left: none;
-			border-right: none;
-			border-top: none;
+			border: none;
 			color: #6a7989;
 			font-size: 25px;
 			font-weight: bold;
@@ -168,12 +169,16 @@ section {
 			width: 100%;
 
 			&:not(:placeholder-shown) {
-				/**/
-				& ~ label {
-					transform: translate(0px, -60px);
 
-					&#name_label::after {
+				& ~ label {
+					
+					span {
+						transform: translate(0px, -40px);
+					}
+					
+					&#name_label::before {
 						background-color: #00aaff;
+						height: 3px;
 					}
 
 					&#street_label::after {
@@ -184,43 +189,35 @@ section {
 						background-color: #ff5500;
 					}
 
-					&::after {
-						visibility: visible;
-						width: 100%;
-					}
 				}
 			}
 
 			&:focus {
-				border-bottom: none;
-
+				
 				& ~ label {
-					// or +
-					-moz-animation: fadeIn 10s;
-					-ms-animation: fadeIn 10s;
-					-o-animation: fadeIn 10s;
-					-webkit-animation: fadeIn 10s;
-					animation: fadeIn 10s linear;
-					transform: translate(0px, -60px);
-					// visibility: hidden;
-
-					&#name_label::after {
+					
+					span {
+						animation: animimate_forward 0.3s forwards;
+					}
+	
+					&#name_label::before {
 						background-color: #00aaff;
+						height: 3px;
+						animation: expand_width 200ms;
 					}
 
-					&#street_label::after {
+					&#street_label::before {
 						background-color: #00ffaa;
+						height: 3px;
+						animation: expand_width 200ms;
 					}
 
-					&#town_label::after {
+					&#town_label::before {
 						background-color: #ff5500;
+						height: 3px;
+						animation: expand_width 200ms;
 					}
 
-					&::after {
-						animation: expand_width 1s;
-						visibility: visible;
-						width: 100%;
-					}
 				}
 			}
 
@@ -230,6 +227,7 @@ section {
 		}
 	}
 }
+
 
 #kuro_section {
 	background: #2f3238;
@@ -593,109 +591,17 @@ section {
 	}
 }
 
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	20% {
-		opacity: 1;
-	}
-
+@keyframes animimate_forward {
 	50% {
-		/* -webkit-transform: translateX(-20px); */
-		/* transform: translate(0px, 0px); */
+		opacity: 0;
+		transform: translate3d(10px, -40px, 0);
+	}
+	51% {
+		opacity: 0;
+		transform: translate3d(20px, -40px, 0);
 	}
 	100% {
-		/* -webkit-transform: translateX(0); */
-		/* transform: translate(80px, 0px); */
-	}
-}
-
-@-moz-keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	20% {
 		opacity: 1;
-	}
-
-	50% {
-		/* -webkit-transform: translateX(-20px); */
-		/* transform: translate(0px, 0px); */
-	}
-	100% {
-		/* -webkit-transform: translateX(0); */
-		/* transform: translate(80px, 0px); */
-	}
-}
-
-@-webkit-keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	20% {
-		opacity: 1;
-	}
-
-	50% {
-		/* -webkit-transform: translateX(-20px); */
-		/* transform: translate(0px, 0px); */
-	}
-	100% {
-		/* -webkit-transform: translateX(0); */
-		/* transform: translate(80px, 0px); */
-	}
-}
-
-@-o-keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	20% {
-		opacity: 1;
-	}
-
-	50% {
-		/* -webkit-transform: translateX(-20px); */
-		/* transform: translate(0px, 0px); */
-	}
-	100% {
-		/* -webkit-transform: translateX(0); */
-		/* transform: translate(80px, 0px); */
-	}
-}
-
-@-ms-keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	20% {
-		opacity: 1;
-	}
-
-	50% {
-		/* -webkit-transform: translateX(-20px); */
-		/* transform: translate(0px, 0px); */
-	}
-	100% {
-		/* -webkit-transform: translateX(0); */
-		/* transform: translate(80px, 0px); */
-	}
-}
-
-// test
-.sample {
-	&::before {
-		content: "";
-		border-top: 5px solid red;
-		display: block;
-	}
-
-	&:focus {
-		& ~ label {
-			&::before {
-				border-top: 5px solid blue;
-			}
-		}
+		transform: translate3d(0px, -40px, 0);
 	}
 }
