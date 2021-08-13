@@ -41,62 +41,70 @@ section {
 
 		label {
 			color: #6a7989;
-			font-size: 20px;
+			font-size: 25px;
+			font-weight: bold;
 			position: absolute;
 			top: 40px;
-			transition: transform 200ms ease-out;
-			z-index: 0;
 			width: 100%;
+			z-index: 0;
+
+			span {
+				position: absolute;
+				top: -10px;
+				transition: transform 200ms ease-out;
+			}
+
 			&::after {
-				background: #6a7989;;
+				background: #6a7989;
 				content: '';
 				height: 4px;
 				left: 0px;
 				position: absolute;
 				top: -30px;
-				transition: transform 500ms ease-out;
+				transition: transform 300ms ease-out;
 				width: 100%;
 			}
 
 			&::before {
+				background: #6a7989;;
 				content: '';
 				height: 4px;
-				width: 100%;
-				background: #6a7989;;
-				position: absolute;
 				left: 0px;
+				position: absolute;
 				top: 35px;
-				transition: transform 500ms ease-out;
+				transition: transform 300ms ease-out;
+				width: 100%;
 			}
 		}
 
 		input {
-			/**/
 			background: transparent;			
 			border: none;
 			color: #6a7989;
 			font-size: 25px;
 			font-weight: bold;
 			height: 70px;
-			padding: 14px 0px 0px 0px;
 			position: absolute;
 			transition: all 200ms ease-out;
 			width: 100%;
 			z-index: 1;
 
 			&:focus,&:not(:placeholder-shown) {
-				height: 80px;
-
+			
 				& ~ label {
-				
-					transform: translate(0px, -60px);
+					
+					& > span {
+						transform: translate(0px, -80px);
+						top: 0px;
+					}
+					
 					&::after {
-						transform: translate(0px, 70px);
+						transform: translate(0px, -10px);
 						
 					}
 
 					&::before {
-						transform: translate(0px, 80px);	
+						transform: translate(0px, 10px);	
 					}
 
 				}
