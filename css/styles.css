@@ -10,6 +10,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+/* resets */
 h2 {
   font-size: 40px;
 }
@@ -163,30 +164,30 @@ section {
   font-weight: bold;
   position: absolute;
   top: 30px;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
+  -webkit-transition: border-color 15s ease-out;
+  transition: border-color 15s ease-out;
   width: 100%;
   z-index: 0;
 }
 
-#hoshi_section .input_group label::after {
-  bottom: -90px;
-  content: "";
-  height: 6px;
-  left: 0;
+#hoshi_section .input_group label span {
   position: absolute;
-  -webkit-transition: width 0.2s ease all;
-  transition: width 0.2s ease all;
-  visibility: hidden;
-  width: 10px;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+#hoshi_section .input_group label::before {
+  background: #6a7989;
+  content: '';
+  height: 2px;
+  position: absolute;
+  top: 50px;
+  width: 100%;
 }
 
 #hoshi_section .input_group input {
   background: transparent;
-  border-bottom: 1px solid #6a7989;
-  border-left: none;
-  border-right: none;
-  border-top: none;
+  border: none;
   color: #6a7989;
   font-size: 25px;
   font-weight: bold;
@@ -195,17 +196,14 @@ section {
   width: 100%;
 }
 
-#hoshi_section .input_group input:not(:placeholder-shown) {
-  /**/
+#hoshi_section .input_group input:not(:placeholder-shown) ~ label span {
+  -webkit-transform: translate(0px, -40px);
+          transform: translate(0px, -40px);
 }
 
-#hoshi_section .input_group input:not(:placeholder-shown) ~ label {
-  -webkit-transform: translate(0px, -60px);
-          transform: translate(0px, -60px);
-}
-
-#hoshi_section .input_group input:not(:placeholder-shown) ~ label#name_label::after {
+#hoshi_section .input_group input:not(:placeholder-shown) ~ label#name_label::before {
   background-color: #00aaff;
+  height: 3px;
 }
 
 #hoshi_section .input_group input:not(:placeholder-shown) ~ label#street_label::after {
@@ -216,39 +214,30 @@ section {
   background-color: #ff5500;
 }
 
-#hoshi_section .input_group input:not(:placeholder-shown) ~ label::after {
-  visibility: visible;
-  width: 100%;
+#hoshi_section .input_group input:focus ~ label span {
+  -webkit-animation: animimate_forward 0.3s forwards;
+          animation: animimate_forward 0.3s forwards;
 }
 
-#hoshi_section .input_group input:focus {
-  border-bottom: none;
-}
-
-#hoshi_section .input_group input:focus ~ label {
-  -webkit-animation: fadeIn 10s;
-  animation: fadeIn 10s linear;
-  -webkit-transform: translate(0px, -60px);
-          transform: translate(0px, -60px);
-}
-
-#hoshi_section .input_group input:focus ~ label#name_label::after {
+#hoshi_section .input_group input:focus ~ label#name_label::before {
   background-color: #00aaff;
+  height: 3px;
+  -webkit-animation: expand_width 200ms;
+          animation: expand_width 200ms;
 }
 
-#hoshi_section .input_group input:focus ~ label#street_label::after {
+#hoshi_section .input_group input:focus ~ label#street_label::before {
   background-color: #00ffaa;
+  height: 3px;
+  -webkit-animation: expand_width 200ms;
+          animation: expand_width 200ms;
 }
 
-#hoshi_section .input_group input:focus ~ label#town_label::after {
+#hoshi_section .input_group input:focus ~ label#town_label::before {
   background-color: #ff5500;
-}
-
-#hoshi_section .input_group input:focus ~ label::after {
-  -webkit-animation: expand_width 1s;
-          animation: expand_width 1s;
-  visibility: visible;
-  width: 100%;
+  height: 3px;
+  -webkit-animation: expand_width 200ms;
+          animation: expand_width 200ms;
 }
 
 #hoshi_section .input_group input:focus-visible {
@@ -696,47 +685,39 @@ section {
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
+@-webkit-keyframes animimate_forward {
   50% {
-    /* -webkit-transform: translateX(-20px); */
-    /* transform: translate(0px, 0px); */
+    opacity: 0;
+    -webkit-transform: translate3d(10px, -40px, 0);
+            transform: translate3d(10px, -40px, 0);
+  }
+  51% {
+    opacity: 0;
+    -webkit-transform: translate3d(20px, -40px, 0);
+            transform: translate3d(20px, -40px, 0);
   }
   100% {
-    /* -webkit-transform: translateX(0); */
-    /* transform: translate(80px, 0px); */
+    opacity: 1;
+    -webkit-transform: translate3d(0px, -40px, 0);
+            transform: translate3d(0px, -40px, 0);
   }
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
+@keyframes animimate_forward {
   50% {
-    /* -webkit-transform: translateX(-20px); */
-    /* transform: translate(0px, 0px); */
+    opacity: 0;
+    -webkit-transform: translate3d(10px, -40px, 0);
+            transform: translate3d(10px, -40px, 0);
+  }
+  51% {
+    opacity: 0;
+    -webkit-transform: translate3d(20px, -40px, 0);
+            transform: translate3d(20px, -40px, 0);
   }
   100% {
-    /* -webkit-transform: translateX(0); */
-    /* transform: translate(80px, 0px); */
+    opacity: 1;
+    -webkit-transform: translate3d(0px, -40px, 0);
+            transform: translate3d(0px, -40px, 0);
   }
-}
-
-.sample::before {
-  content: "";
-  border-top: 5px solid red;
-  display: block;
-}
-
-.sample:focus ~ label::before {
-  border-top: 5px solid blue;
 }
 /*# sourceMappingURL=styles.css.map */
